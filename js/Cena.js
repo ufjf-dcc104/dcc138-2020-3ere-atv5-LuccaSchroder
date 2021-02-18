@@ -75,5 +75,6 @@ export default class Cena {
                 this.sprites.splice(idx, 1); // remoção de elemento especifico dentro de um vetor
             }
         }
+        this.aRemover = [];
     }
 }

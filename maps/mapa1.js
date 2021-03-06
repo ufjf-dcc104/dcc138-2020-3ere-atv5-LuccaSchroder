@@ -11,4 +11,4 @@ const mapa1 = [
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1],
 ];
 
-export default mapa1;
+export default mapa1; 

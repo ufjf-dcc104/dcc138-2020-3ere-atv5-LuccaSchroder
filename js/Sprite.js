@@ -46,16 +46,22 @@ export default class Sprite {
     );
   }
   aplicaRestricoes(dt) {
-    this.aplicaRestricoesDireta(dt);
-    this.aplicaRestricoesEsquerda(dt);
-    this.aplicaRestricoesBaixo(dt);
-    this.aplicaRestricoesCima(dt);
+    this.aplicaRestricoesDireta(this.mx + 1, this.my - 1);
+    this.aplicaRestricoesDireta(this.mx + 1, this.my);
+    this.aplicaRestricoesDireta(this.mx + 1, this.my + 1);
+    this.aplicaRestricoesEsquerda(this.mx - 1, this.my - 1);
+    this.aplicaRestricoesEsquerda(this.mx - 1, this.my);
+    this.aplicaRestricoesEsquerda(this.mx - 1, this.my + 1);
+    this.aplicaRestricoesBaixo(this.mx - 1, this.my + 1);
+    this.aplicaRestricoesBaixo(this.mx, this.my + 1);
+    this.aplicaRestricoesBaixo(this.mx + 1, this.my + 1);
+    this.aplicaRestricoesCima(this.mx - 1, this.my - 1);
+    this.aplicaRestricoesCima(this.mx, this.my - 1);
+    this.aplicaRestricoesCima(this.mx + 1, this.my - 1);
   }
-  aplicaRestricoesDireta(dt) {
+  aplicaRestricoesDireta(pmx, pmy) {
     if (this.vx > 0) {
       const SIZE = this.cena.mapa.SIZE;
-      const pmx = this.mx + 1;
-      const pmy = this.my;
       if (this.cena.mapa.tiles[pmy][pmx] != 0) {
         // y é a linha, x é a coluna
         const tile = {
@@ -78,11 +84,9 @@ export default class Sprite {
       }
     }
   }
-  aplicaRestricoesEsquerda(dt) {
+  aplicaRestricoesEsquerda(pmx, pmy) {
     if (this.vx < 0) {
       const SIZE = this.cena.mapa.SIZE;
-      const pmx = this.mx - 1;
-      const pmy = this.my;
       if (this.cena.mapa.tiles[pmy][pmx] != 0) {
         const tile = {
           x: pmx * SIZE + SIZE / 2,
@@ -105,11 +109,9 @@ export default class Sprite {
     }
   }
 
-  aplicaRestricoesBaixo(dt) {
+  aplicaRestricoesBaixo(pmx, pmy) {
     if (this.vy > 0) {
       const SIZE = this.cena.mapa.SIZE;
-      const pmx = this.mx;
-      const pmy = this.my + 1;
       if (this.cena.mapa.tiles[pmy][pmx] != 0) {
         const tile = {
           x: pmx * SIZE + SIZE / 2,
@@ -131,11 +133,9 @@ export default class Sprite {
       }
     }
   }
-  aplicaRestricoesCima(dt) {
+  aplicaRestricoesCima(pmx, pmy) {
     if (this.vy < 0) {
       const SIZE = this.cena.mapa.SIZE;
-      const pmx = this.mx;
-      const pmy = this.my - 1;
       if (this.cena.mapa.tiles[pmy][pmx] != 0) {
         const tile = {
           x: pmx * SIZE + SIZE / 2,

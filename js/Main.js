@@ -15,8 +15,8 @@ assets.carregaAudio("moeda", "assets/coin.wav");
 assets.carregaAudio("boom", "assets/boom.wav");
 
 const canvas = document.querySelector("canvas");
-canvas.width = 14 * 32;
-canvas.height = 10 * 32;
+canvas.width = 16 * 32;
+canvas.height = 12 * 32;
 const cena1 = new Cena(canvas, assets);
 
 const mapa1 = new Mapa(10, 14, 32);

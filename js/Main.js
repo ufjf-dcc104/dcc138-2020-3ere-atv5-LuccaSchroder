@@ -30,6 +30,13 @@ cena1.adicionar(pc);
 cena1.adicionar(en1);
 cena1.adicionar(new Sprite({ x: 115, y: 70, vy: 10, color: "red" }));
 cena1.adicionar(new Sprite({ x: 115, y: 160, vy: -10, color: "red" }));
+cena1.adicionar(new Sprite({ x: (Math.random()*512), y: (Math.random()*384), vx: 10 + (Math.random()*5), vy: 10 + (Math.random()*5), color: "red" }));
+cena1.adicionar(new Sprite({ x: (Math.random()*512), y: (Math.random()*384), vx: 10 + (Math.random()*5), color: "red" }));
+cena1.adicionar(new Sprite({ x: (Math.random()*512), y: (Math.random()*384), vy: 10 + (Math.random()*5), color: "red" }));
+cena1.adicionar(new Sprite({ x: (Math.random()*512), y: (Math.random()*384), vy: - 10 - (Math.random()*5), vy: - 10 - (Math.random()*5), color: "red" }));
+cena1.adicionar(new Sprite({ x: (Math.random()*512), y: (Math.random()*384), vx: - 10 - (Math.random()*5), color: "red" }));
+cena1.adicionar(new Sprite({ x: (Math.random()*512), y: (Math.random()*384), vy: - 10 - (Math.random()*5), color: "red" }));
+
 
 cena1.iniciar();
 

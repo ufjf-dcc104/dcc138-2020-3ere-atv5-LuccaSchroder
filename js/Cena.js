@@ -31,6 +31,7 @@ export default class Cena {
         sprite.cena = this;
         this.sprites.push(sprite);
     }
+
     passo(dt){
         if(this.assets.acabou()){
             for (const sprite of this.sprites) {

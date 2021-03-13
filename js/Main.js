@@ -22,6 +22,7 @@ assets.carregaImagem("pisograma", "assets/pisograma.png");
 
 assets.carregaAudio("moeda", "assets/coin.wav");
 assets.carregaAudio("boom", "assets/boom.wav");
+assets.carregaAudio("colisao", "assets/colisao.wav");
 
 const canvas = document.querySelector("canvas");
 canvas.width = 16 * 32;

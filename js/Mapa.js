@@ -11,7 +11,11 @@ export default class Mapa {
             }
         }
         this.cena = null;
+        var fundoImg = new Image();
+    
     }
+
+    
 
     desenhar(ctx) {
         for (let l = 0; l < this.LINHAS; l++) {
@@ -31,6 +35,9 @@ export default class Mapa {
                         ctx.fillStyle = "cyan";
                         ctx.lineWidth = 2;
                         ctx.strokeStyle = "blue";
+                    break;
+                    case 4:
+                        // this.fundoImg =  "assets/fundograma.png";
                     break;
                     default:
                         ctx.fillStyle = "black";
@@ -54,4 +61,17 @@ export default class Mapa {
             }
         }
     }
+    spriteAleatorio(modelo) {
+        let L = this.LINHAS;
+        let C = this.COLUNAS;
+
+        L = Math.floor(Math.random() * 12);
+        C = Math.floor(Math.random() * 16);
+
+        while(mapa[L][C]==0) {
+            L = Math.floor(Math.random() * 12);
+            C = Math.floor(Math.random() * 16);
+        }
+        sprite.x = C*SIZE + SIZE/2;
+    } 
 }

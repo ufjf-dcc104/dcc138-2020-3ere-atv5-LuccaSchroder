@@ -52,6 +52,20 @@ export default class Cena {
         this.iniciar();
         this.t0 = t;
     }
+    /* quadroTeste(t){
+        this.t0 = this.t0 ?? t;
+        this.dt = (t - this.t0) / 1000;
+        sprite.cena = this;
+        this.sprites.push(sprite);
+
+        this.passo(this.dt);
+        this.desenhar();
+        this.checaColisao();
+        this.removerSprites();
+
+        this.iniciar();
+        this.t0 = t;
+    } */
     iniciar(){
         this.idAnim = requestAnimationFrame((t) => {
             this.quadro(t);

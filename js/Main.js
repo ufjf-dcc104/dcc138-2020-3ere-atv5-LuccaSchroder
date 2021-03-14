@@ -43,7 +43,7 @@ cena1.quandoCriar = function(dt) {
     nmx = Math.floor(Math.random()*(this.mapa.tiles[0].length - 2)) + 1;
     nmy = Math.floor(Math.random()*(this.mapa.tiles.length - 2)) + 1;
   }
-  const en1 = new Sprite({ x: nmx * this.mapa.SIZE + this.mapa.SIZE/2, y: nmy * this.mapa.SIZE + this.mapa.SIZE/2, vx: -10, vy:20, color: "yellow" });
+  const en1 = new Sprite({ x: nmx * this.mapa.SIZE + this.mapa.SIZE/2, y: nmy * this.mapa.SIZE + this.mapa.SIZE/2, vx: Math.floor(Math.random()*50) - 50, vy:Math.floor(Math.random()*50) - 50, color: "yellow" });
   this.adicionar(en1);
   en1.passo(0);
   this.spawn = 2;

@@ -10,6 +10,7 @@ export default class Cena {
         this.idAnim = null;
         this.assets = assets;
         this.mapa = null;
+        this.spawn = 2;
     }
     desenhar(){
         this.ctx.fillStyle = "lightblue";
@@ -36,6 +37,10 @@ export default class Cena {
         if(this.assets.acabou()){
             for (const sprite of this.sprites) {
                 sprite.passo(dt);
+            }
+            this.spawn -= 1*dt;
+            if(this.spawn <= 0) {
+                this.quandoCriar(dt);
             }
         }
     }
@@ -94,7 +99,7 @@ export default class Cena {
         if(!this.aRemover.includes(b)){
             this.aRemover.push(b);   
         }
-        console.log(this.aRemover);
+        this.assets.play("colisao");
     }
 
     removerSprites(){
@@ -110,5 +115,9 @@ export default class Cena {
     configuraMapa(mapa) {
         this.mapa = mapa;
         this.mapa.cena = this;
+    }
+
+    quandoCriar(dt) {
+
     }
 }

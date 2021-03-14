@@ -11,14 +11,15 @@ const assets = new AssetManager(mixer);
 assets.carregaImagem("garota", "assets/garota.png");
 assets.carregaImagem("esqueleto", "assets/skelly.png");
 assets.carregaImagem("orc", "assets/orc.png");
-assets.carregaImagem("fundo1", "assets/fundo1.png");
-assets.carregaImagem("fundo2", "assets/fundo2.png");
-assets.carregaImagem("fundo3", "assets/fundo3.png");
 assets.carregaImagem("fundograma", "assets/fundograma.png");
 assets.carregaImagem("parede", "assets/parede.png");
 assets.carregaImagem("pedra", "assets/pedra.png");
 assets.carregaImagem("piso", "assets/piso.png");
 assets.carregaImagem("pisograma", "assets/pisograma.png");
+assets.carregaImagem("pisograma2", "assets/pisograma2.png");
+assets.carregaImagem("pisograma2", "assets/pisograma2.png");
+assets.carregaImagem("ceu", "assets/ceu.png");
+
 
 assets.carregaAudio("moeda", "assets/coin.wav");
 assets.carregaAudio("boom", "assets/boom.wav");
@@ -35,10 +36,21 @@ mapa1.carregaMapa(modeloMapa1);
 cena1.configuraMapa(mapa1);
 
 const pc = new Sprite({ x: 50, y:150, vx: 10});
-const en1 = new Sprite({ x: 160, vx: -10, color: "red" });
+cena1.quandoCriar = function(dt) {
+  let nmx = Math.floor(Math.random()*(this.mapa.tiles[0].length - 2)) + 1;
+  let nmy = Math.floor(Math.random()*(this.mapa.tiles.length - 2)) + 1;
+  while(this.mapa.tiles[nmy][nmx] !== 0) {
+    nmx = Math.floor(Math.random()*(this.mapa.tiles[0].length - 2)) + 1;
+    nmy = Math.floor(Math.random()*(this.mapa.tiles.length - 2)) + 1;
+  }
+  const en1 = new Sprite({ x: nmx * this.mapa.SIZE + this.mapa.SIZE/2, y: nmy * this.mapa.SIZE + this.mapa.SIZE/2, vx: -10, vy:20, color: "yellow" });
+  this.adicionar(en1);
+  en1.passo(0);
+  this.spawn = 2;
+
+};
 
 cena1.adicionar(pc);
-cena1.adicionar(en1);
 cena1.adicionar(new Sprite({ x: 115, y: 70, vy: 10, color: "red" }));
 cena1.adicionar(new Sprite({ x: 115, y: 160, vy: -10, color: "red" }));
 // cena1.adicionar(new Sprite({ x: (Math.random()*512), y: (Math.random()*384), vx: 10 + (Math.random()*5), vy: 10 + (Math.random()*5), color: "red" }));

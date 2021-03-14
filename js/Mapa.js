@@ -36,9 +36,14 @@ export default class Mapa {
             );
             break;
           case 2:
-            ctx.fillStyle = "red";
-            ctx.lineWidth = 2;
-            ctx.strokeStyle = "orange";
+            imagem = this.cena.assets.img("pisograma2");
+            ctx.drawImage(
+              imagem,
+              c * this.SIZE,
+              l * this.SIZE,
+              this.SIZE,
+              this.SIZE
+            );
             break;
           case 3:
             imagem = this.cena.assets.img("pisograma");
@@ -62,7 +67,16 @@ export default class Mapa {
               this.SIZE
             );
 
-            // this.fundoImg =  "assets/fundograma.png";
+            break;
+            case 5:
+            imagem = this.cena.assets.img("ceu");
+            ctx.drawImage(
+              imagem,
+              c * this.SIZE,
+              l * this.SIZE,
+              this.SIZE,
+              this.SIZE
+            );
             break;
           default:
             ctx.fillStyle = "black";

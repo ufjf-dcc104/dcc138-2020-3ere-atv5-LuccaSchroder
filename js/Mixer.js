@@ -15,7 +15,6 @@ export default class Mixer {
             };
             this.canais[c] = canal;   
         }
-
     }
 
     play(audio) {

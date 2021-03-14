@@ -17,8 +17,8 @@ assets.carregaImagem("pedra", "assets/pedra.png");
 assets.carregaImagem("piso", "assets/piso.png");
 assets.carregaImagem("pisograma", "assets/pisograma.png");
 assets.carregaImagem("pisograma2", "assets/pisograma2.png");
-assets.carregaImagem("pisograma2", "assets/pisograma2.png");
 assets.carregaImagem("ceu", "assets/ceu.png");
+assets.carregaImagem("barreira2", "assets/barreira2.png");
 
 
 assets.carregaAudio("moeda", "assets/coin.wav");

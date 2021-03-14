@@ -78,6 +78,16 @@ export default class Mapa {
               this.SIZE
             );
             break;
+            case 6:
+            imagem = this.cena.assets.img("barreira2");
+            ctx.drawImage(
+                imagem,
+                c * this.SIZE,
+                l * this.SIZE,
+                this.SIZE,
+                this.SIZE
+            );
+                break;
           default:
             ctx.fillStyle = "black";
             ctx.lineWidth = 1;

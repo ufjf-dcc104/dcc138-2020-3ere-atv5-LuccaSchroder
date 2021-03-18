@@ -32,8 +32,10 @@ canvas.width = 16 * 32;
 canvas.height = 12 * 32;
 
 input.configurarTeclado({
-  "ArrowLeft" : "MOVE_ESQUERDA",
-  "ArrowRight" : "MOVE_DIREITA",
+  ArrowLeft : "MOVE_ESQUERDA",
+  ArrowRight : "MOVE_DIREITA",
+  ArrowUp : "MOVE_CIMA",
+  ArrowDown : "MOVE_BAIXO",
 
 });
 
@@ -52,6 +54,13 @@ pc.controlar = function(dt) {
     this.vx = +50;
   } else {
     this.vx = 0;
+  }
+  if(input.comandos.get("MOVE_CIMA")){
+    this.vy = -50;
+  } else if(input.comandos.get("MOVE_BAIXO")){
+    this.vy = +50;
+  } else {
+    this.vy = 0;
   }
 };
 

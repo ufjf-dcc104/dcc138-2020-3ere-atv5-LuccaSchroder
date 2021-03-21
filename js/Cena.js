@@ -11,6 +11,7 @@ export default class Cena {
         this.assets = assets;
         this.mapa = null;
         this.spawn = 2;
+        this.game = null;
     }
     desenhar(){
         this.ctx.fillStyle = "lightblue";

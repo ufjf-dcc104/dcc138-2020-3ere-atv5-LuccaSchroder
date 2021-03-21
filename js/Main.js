@@ -21,6 +21,7 @@ assets.carregaImagem("pisograma", "assets/pisograma.png");
 assets.carregaImagem("pisograma2", "assets/pisograma2.png");
 assets.carregaImagem("ceu", "assets/ceu.png");
 assets.carregaImagem("barreira2", "assets/barreira2.png");
+assets.carregaImagem("moeda", "assets/moeda.png");
 
 
 assets.carregaAudio("moeda", "assets/coin.wav");
@@ -45,7 +46,7 @@ const game = new Game(canvas, assets, input);
 const cena0 = new CenaCarregando();
 const cena1 = new CenaJogo();
 const cena2 = new CenaFim();
-game.adicionarCena("carregandoS", cena0);
+game.adicionarCena("carregando", cena0);
 game.adicionarCena("jogo", cena1);
 game.adicionarCena("fim", cena2);
 

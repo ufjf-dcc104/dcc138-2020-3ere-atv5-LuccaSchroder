@@ -24,7 +24,7 @@ assets.carregaImagem("barreira2", "assets/barreira2.png");
 assets.carregaImagem("moeda", "assets/moeda.png");
 
 
-assets.carregaAudio("moeda", "assets/coin.wav");
+assets.carregaAudio("moeda1", "assets/coin.wav");
 assets.carregaAudio("boom", "assets/boom.wav");
 assets.carregaAudio("colisao", "assets/colisao.wav");
 
@@ -70,7 +70,7 @@ document.addEventListener("keydown", (e) => {
       game.parar();
       break;
     case "c":
-      assets.play("moeda");
+      assets.play("moeda1");
       break;
     case "b":
       assets.play("boom");

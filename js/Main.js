@@ -98,15 +98,15 @@ cena1.adicionar(new Sprite({ x: 115, y: 160, vy: -10, color: "red", controlar: p
 // cena1.adicionar(new Sprite({ x: (Math.random()*512), y: (Math.random()*384), vy: - 10 - (Math.random()*5), color: "red" }));
 // cena1.quadroTeste(4);
 
-cena1.iniciar();
+game.iniciar();
 
 document.addEventListener("keydown", (e) => {
   switch (e.key) {
     case "s":
-      cena1.iniciar();
+      game.iniciar();
       break;
     case "S":
-      cena1.parar();
+      game.parar();
       break;
     case "c":
       assets.play("moeda");

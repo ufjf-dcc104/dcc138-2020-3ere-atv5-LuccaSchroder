@@ -91,3 +91,60 @@ export default class CenaJogo extends Cena {
     );
   }
 }
+const orc = new Image();
+orc.src = "./assets/orc.png";
+
+orc.addEventListener("load", terminouDeCarregar);
+
+let l = 2;
+let c = 1;
+
+let pose = 0;
+let quadro = 0;
+const POSES = [
+  { qmax: 7, pv: 9 },
+  { qmax: 7, pv: 9 },
+  { qmax: 7, pv: 9 },
+  { qmax: 7, pv: 9 },
+  { qmax: 8, pv: 9 },
+  { qmax: 8, pv: 9 },
+  { qmax: 8, pv: 9 },
+  { qmax: 8, pv: 9 },
+  { qmax: 9, pv: 9 },
+  { qmax: 9, pv: 9 },
+  { qmax: 9, pv: 9 },
+  { qmax: 9, pv: 9 },
+  { qmax: 6, pv: 9 },
+  { qmax: 6, pv: 9 },
+  { qmax: 6, pv: 9 },
+  { qmax: 6, pv: 9 },
+  { qmax: 13, pv: 27 },
+  { qmax: 13, pv: 27 },
+  { qmax: 13, pv: 27 },
+  { qmax: 13, pv: 27 },
+  { qmax: 6, pv: 9 },
+];
+
+function terminouDeCarregar() {
+
+}
+
+let t0;
+let dt;
+
+function passo(t) {
+  t0 = t0 ?? t;
+  dt = (t - t0)/1000;
+
+  quadro = (quadro >= POSES[pose].qmax - 1) ? 0 : quadro + POSES[pose].pv * dt;
+  
+  ctx.drawImage(orc,
+    
+    Math.floor(quadro) * 64, pose * 64, 64, 64,
+
+    0, 0, 64, 64
+  );
+
+  requestAnimationFrame(passo);
+  t0 = t;
+} 

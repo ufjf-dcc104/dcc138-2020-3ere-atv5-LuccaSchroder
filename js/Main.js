@@ -75,36 +75,3 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-const orc = new Image();
-orc.src = "./assets/orc.png";
-
-orc.addEventListener("load", terminouDeCarregar);
-
-let l = 2;
-let c = 1;
-
-let pose = 0;
-let quadro = 0;
-const POSES = [
-  { qmax: 7, pv: 9 },
-  { qmax: 7, pv: 9 },
-  { qmax: 7, pv: 9 },
-  { qmax: 7, pv: 9 },
-  { qmax: 8, pv: 9 },
-  { qmax: 8, pv: 9 },
-  { qmax: 8, pv: 9 },
-  { qmax: 8, pv: 9 },
-  { qmax: 9, pv: 9 },
-  { qmax: 9, pv: 9 },
-  { qmax: 9, pv: 9 },
-  { qmax: 9, pv: 9 },
-  { qmax: 6, pv: 9 },
-  { qmax: 6, pv: 9 },
-  { qmax: 6, pv: 9 },
-  { qmax: 6, pv: 9 },
-  { qmax: 13, pv: 27 },
-  { qmax: 13, pv: 27 },
-  { qmax: 13, pv: 27 },
-  { qmax: 13, pv: 27 },
-  { qmax: 6, pv: 9 },
-];

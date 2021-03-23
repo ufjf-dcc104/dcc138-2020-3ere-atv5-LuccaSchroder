@@ -79,7 +79,7 @@ export default class Mapa {
             );
             break;
             case 6:
-            imagem = this.cena.assets.img("barreira2");
+            imagem = this.cena.assets.img("moeda");
             ctx.drawImage(
                 imagem,
                 c * this.SIZE,
@@ -87,7 +87,8 @@ export default class Mapa {
                 this.SIZE,
                 this.SIZE
             );
-                break;
+            break;
+            
           default:
             ctx.fillStyle = "black";
             ctx.lineWidth = 1;

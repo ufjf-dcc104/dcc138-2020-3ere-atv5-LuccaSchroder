@@ -77,3 +77,9 @@ document.addEventListener("keydown", (e) => {
       break;
   }
 });
+
+const orc = new Image();
+orc.src = "./assets/orc.png";
+
+orc.addEventListener("load", terminouDeCarregar);
+

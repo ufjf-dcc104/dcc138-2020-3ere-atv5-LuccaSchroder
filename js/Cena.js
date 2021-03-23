@@ -6,6 +6,7 @@ export default class Cena {
         this.assets = assets;
         this.game = null;
         this.preparar();
+        this.moeda = null;
     }
     desenhar(){
         this.ctx.fillStyle = "lightblue";
@@ -99,6 +100,7 @@ export default class Cena {
             this.aRemover.push(b);   
         }
         this.assets.play("colisao");
+        const moeda = moeda + 1;
     }
 
     removerSprites(){

@@ -23,7 +23,6 @@ assets.carregaImagem("ceu", "assets/ceu.png");
 assets.carregaImagem("barreira2", "assets/barreira2.png");
 assets.carregaImagem("moeda", "assets/moeda.png");
 
-
 assets.carregaAudio("moeda1", "assets/coin.wav");
 assets.carregaAudio("boom", "assets/boom.wav");
 assets.carregaAudio("colisao", "assets/colisao.wav");
@@ -33,12 +32,11 @@ canvas.width = 16 * 32;
 canvas.height = 12 * 32;
 
 input.configurarTeclado({
-  ArrowLeft : "MOVE_ESQUERDA",
-  ArrowRight : "MOVE_DIREITA",
-  ArrowUp : "MOVE_CIMA",
-  ArrowDown : "MOVE_BAIXO",
-  " " : "PROXIMA_CENA",
-
+  ArrowLeft: "MOVE_ESQUERDA",
+  ArrowRight: "MOVE_DIREITA",
+  ArrowUp: "MOVE_CIMA",
+  ArrowDown: "MOVE_BAIXO",
+  " ": "PROXIMA_CENA",
 });
 
 const game = new Game(canvas, assets, input);
@@ -49,7 +47,6 @@ const cena2 = new CenaFim();
 game.adicionarCena("carregando", cena0);
 game.adicionarCena("jogo", cena1);
 game.adicionarCena("fim", cena2);
-
 
 // cena1.adicionar(new Sprite({ x: (Math.random()*512), y: (Math.random()*384), vx: 10 + (Math.random()*5), vy: 10 + (Math.random()*5), color: "red" }));
 // cena1.adicionar(new Sprite({ x: (Math.random()*512), y: (Math.random()*384), vx: 10 + (Math.random()*5), color: "red" }));
@@ -83,3 +80,31 @@ orc.src = "./assets/orc.png";
 
 orc.addEventListener("load", terminouDeCarregar);
 
+let l = 2;
+let c = 1;
+
+let pose = 0;
+let quadro = 0;
+const POSES = [
+  { qmax: 7, pv: 9 },
+  { qmax: 7, pv: 9 },
+  { qmax: 7, pv: 9 },
+  { qmax: 7, pv: 9 },
+  { qmax: 8, pv: 9 },
+  { qmax: 8, pv: 9 },
+  { qmax: 8, pv: 9 },
+  { qmax: 8, pv: 9 },
+  { qmax: 9, pv: 9 },
+  { qmax: 9, pv: 9 },
+  { qmax: 9, pv: 9 },
+  { qmax: 9, pv: 9 },
+  { qmax: 6, pv: 9 },
+  { qmax: 6, pv: 9 },
+  { qmax: 6, pv: 9 },
+  { qmax: 6, pv: 9 },
+  { qmax: 13, pv: 27 },
+  { qmax: 13, pv: 27 },
+  { qmax: 13, pv: 27 },
+  { qmax: 13, pv: 27 },
+  { qmax: 6, pv: 9 },
+];
